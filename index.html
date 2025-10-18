@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>macOS WebOS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="desktop">
+        <div id="menu-bar">
+            <div class="left">
+                <span class="apple-icon"></span>
+                <span class="app-name">Finder</span>
+                <span>File</span>
+                <span>Edit</span>
+                <span>View</span>
+                <span>Go</span>
+                <span>Window</span>
+                <span>Help</span>
+            </div>
+            <div class="right">
+                <span id="time"></span>
+            </div>
+        </div>
+        <div id="dock">
+            <div class="dock-item" data-app="finder">
+                <img src="icons/finder.png" alt="Finder">
+                <span class="tooltip">Finder</span>
+            </div>
+            <div class="dock-item" data-app="calculator">
+                <img src="icons/calculator.png" alt="Calculator">
+                <span class="tooltip">Calculator</span>
+            </div>
+            <div class="dock-item" data-app="notepad">
+                <img src="icons/notepad.png" alt="Notepad">
+                <span class="tooltip">Notepad</span>
+            </div>
+            <div class="dock-item" data-app="terminal">
+                <img src="icons/terminal.png" alt="Terminal">
+                <span class="tooltip">Terminal</span>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="apps/calculator.js"></script>
+    <script src="apps/notepad.js"></script>
+    <script src="apps/terminal.js"></script>
+</body>
+</html>

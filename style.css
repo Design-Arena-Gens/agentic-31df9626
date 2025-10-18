@@ -1,0 +1,156 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+#desktop {
+    height: 100%;
+    width: 100%;
+    background: url('wallpaper.jpg') no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
+}
+
+#menu-bar {
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    height: 22px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    font-size: 13px;
+    z-index: 1000;
+}
+
+#menu-bar .left .apple-icon {
+    font-size: 16px;
+    margin-right: 15px;
+}
+
+#menu-bar .left .app-name {
+    font-weight: bold;
+    margin-right: 15px;
+}
+
+#menu-bar .left span, #menu-bar .right span {
+    margin: 0 5px;
+}
+
+#dock {
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 5px;
+    display: flex;
+    align-items: flex-end;
+    z-index: 1000;
+}
+
+.dock-item {
+    margin: 0 5px;
+    position: relative;
+    transition: transform 0.2s;
+}
+
+.dock-item img {
+    width: 50px;
+    height: 50px;
+}
+
+.dock-item:hover {
+    transform: scale(1.2) translateY(-10px);
+}
+
+.dock-item .tooltip {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s;
+}
+
+.dock-item:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
+.window {
+    position: absolute;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    min-width: 200px;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+}
+
+.window-header {
+    height: 25px;
+    background-color: #e0e0e0;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    display: flex;
+    align-items: center;
+    padding: 0 8px;
+    cursor: move;
+}
+
+.window-header .buttons {
+    display: flex;
+}
+
+.window-header .buttons .button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.window-header .buttons .close {
+    background-color: #ff5f57;
+}
+
+.window-header .buttons .minimize {
+    background-color: #ffbd2e;
+}
+
+.window-header .buttons .maximize {
+    background-color: #28c940;
+}
+
+.window-header .title {
+    flex-grow: 1;
+    text-align: center;
+    font-size: 13px;
+    color: #333;
+}
+
+.window-content {
+    flex-grow: 1;
+    padding: 10px;
+    overflow: auto;
+}
